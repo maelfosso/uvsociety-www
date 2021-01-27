@@ -3,7 +3,7 @@ FROM node:12-alpine as build
 WORKDIR /app
 ENV PATH /app/node_modules/.bin:$PATH
 COPY package.json ./
-COPY yarn-lock.json ./
+COPY yarn.lock ./
 RUN npm i --silent
 COPY . ./
 RUN npm run build
